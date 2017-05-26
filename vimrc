@@ -12,7 +12,7 @@ set cursorline
 set showmatch
 set encoding=utf-8
 
-set colorcolumn=80
+set colorcolumn=120
 highlight ColorColumn ctermbg=0
 
 " move to beginning/end of line
@@ -50,7 +50,7 @@ endfun
 nnoremap <C-w> :call TrimWhitespace()<cr>
 autocmd BufWritePre * :call TrimWhitespace()
 
-syntax on
+syntax enable
 syntax match nonascii "[^\x00-\x7F]"
 
 " Insert IPDB debug line on ctrl-f
@@ -59,4 +59,4 @@ fun! CallIpdb()
 endfun
 nnoremap <C-f> :call CallIpdb()<cr>
 
-filetype plugin on
+filetype plugin indent on
