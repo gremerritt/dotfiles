@@ -5,15 +5,19 @@ plugins=(git colored-man colorize github virtualenv pip python brew osx zsh-synt
 export DOTFILES=$HOME/.dotfiles
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export TEMP=/tmp
 
 source $ZSH/oh-my-zsh.sh
 
 alias c='clear'
+alias t='tmux'
 alias vimrc='vim $DOTFILES/vimrc'
 alias zshrc='vim $DOTFILES/zshrc'
+alias tmuxconf='vim ~/.tmux.conf'
 alias zshtheme='vim $DOTFILES/custom.zsh-theme'
 alias srczsh='source ~/.zshrc'
 alias srcvim='source ~/.vimrc'
+alias clrtmp='rm $TEMP/*.sw*'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -33,9 +37,16 @@ alias gpod='git pull origin develop'
 alias gpoom='git push origin master'
 alias gpood='git push origin develop'
 alias gpoh='git push origin HEAD'
+alias gds='git diff --staged'
+function gfoo () {
+    git fetch origin $1:$1; git checkout $1; git branch --set-upstream-to=origin/$1 $1
+}
+
+# Random stuff
+alias hist='tail -n 10000 $HISTFILE | grep '
 
 # ag
-alias ag='noglob ag --ignore=*.sql '
+alias ag='ag --ignore-dir=build'
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

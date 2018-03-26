@@ -11,9 +11,12 @@ set softtabstop=4
 set cursorline
 set showmatch
 set encoding=utf-8
+set backupdir=$TEMP//
+set directory=$TEMP//
+
 
 set colorcolumn=120
-highlight ColorColumn ctermbg=0
+highlight ColorColumn ctermbg=234
 
 " move to beginning/end of line
 nnoremap B ^
@@ -22,6 +25,9 @@ nnoremap E $
 " $/^ doesn't do anything
 nnoremap $ <nop>
 nnoremap ^ <nop>
+
+command! W write
+command! Q quit
 
 " NERDTree --------------------------------------
 autocmd StdinReadPre * let s:std_in=1
