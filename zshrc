@@ -2,7 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="custom"
 plugins=(git colored-man colorize github virtualenv pip python brew osx zsh-syntax-highlighting)
 
-export DOTFILES=$HOME/.dotfiles
+export DOTFILES=$HOME/dev/dotfiles
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export TEMP=/tmp
@@ -13,7 +13,7 @@ alias c='clear'
 alias t='tmux'
 alias vimrc='vim $DOTFILES/vimrc'
 alias zshrc='vim $DOTFILES/zshrc'
-alias tmuxconf='vim ~/.tmux.conf'
+alias tmuxconf='vim $DOTFILES/tmux'
 alias zshtheme='vim $DOTFILES/custom.zsh-theme'
 alias srczsh='source ~/.zshrc'
 alias srcvim='source ~/.vimrc'
@@ -63,3 +63,5 @@ foreach file (`echo $sources`)
         source $file
     fi
 end
+
+export PATH=/usr/local/bin:$PATH

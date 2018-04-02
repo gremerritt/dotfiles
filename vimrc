@@ -43,7 +43,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "------------------------------------------------
 
 " FZF -------------------------------------------
-set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
 nnoremap <C-p> :call fzf#run({'sink': 'tabedit', 'down': '30%'})<cr>
 " -----------------------------------------------
 
@@ -60,9 +60,9 @@ syntax enable
 syntax match nonascii "[^\x00-\x7F]"
 
 " Insert IPDB debug line on ctrl-f
-fun! CallIpdb()
-    r/usr/local/insightsquared/.ipdb.txt
-endfun
-nnoremap <C-f> :call CallIpdb()<cr>
+"fun! CallIpdb()
+"    r/usr/local/insightsquared/.ipdb.txt
+"endfun
+"nnoremap <C-f> :call CallIpdb()<cr>
 
 filetype plugin indent on
