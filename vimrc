@@ -11,11 +11,12 @@ set softtabstop=4
 set cursorline
 set showmatch
 set encoding=utf-8
+set mouse=a
 set backupdir=$TEMP//
 set directory=$TEMP//
 
 
-set colorcolumn=120
+set colorcolumn=100
 highlight ColorColumn ctermbg=234
 
 " move to beginning/end of line
