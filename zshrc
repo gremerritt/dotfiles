@@ -48,6 +48,14 @@ alias hist='tail -n 10000 $HISTFILE | grep '
 # ag
 alias ag='ag --ignore-dir=build'
 
+bindkey -e
+bindkey '^[[1;9C' forward-word
+bindkey '^[[1;9D' backward-word
+
+# real gcc
+# export HOMEBREW_CC=gcc-4.9
+# export HOMEBREW_CXX=g++-4.9
+
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'

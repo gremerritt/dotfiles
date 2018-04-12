@@ -1,6 +1,8 @@
 #!/bin/sh
 
-export DOTFILES=$(dirname "$(readlink -f "$0")")
+export DOTFILES=$(dirname "$(readlink "$0")")
+echo "Dotfiles are at $DOTFILES"
+
 export ZSHDIR=$HOME/.oh-my-zsh
 export FZFDIR=$HOME/.fzf
 
