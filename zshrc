@@ -1,4 +1,5 @@
 export ZSH=$HOME/.oh-my-zsh
+export ZSHLOCAL=$HOME/.zshrc.local
 ZSH_THEME="custom"
 plugins=(git colored-man colorize github virtualenv pip python brew osx zsh-syntax-highlighting)
 
@@ -14,6 +15,7 @@ alias t='tmux'
 alias vimrc='vim $DOTFILES/vimrc'
 alias zshrc='vim $DOTFILES/zshrc'
 alias tmuxconf='vim $DOTFILES/tmux'
+alias zshlocal='vim $ZSHLOCAL'
 alias zshtheme='vim $DOTFILES/custom.zsh-theme'
 alias srczsh='source ~/.zshrc'
 alias srcvim='source ~/.vimrc'
@@ -62,7 +64,7 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 
 # Other files to source
 typeset -ga sources
-sources+="$HOME/.zshrc.local"
+sources+="$ZSHLOCAL"
 sources+="$HOME/.bash_functions"
 
 # try to include all sources
