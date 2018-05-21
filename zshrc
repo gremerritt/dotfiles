@@ -48,7 +48,7 @@ function gfoo () {
 alias hist='tail -n 10000 $HISTFILE | grep '
 
 # ag
-alias ag='ag --ignore-dir=build'
+alias ag='ag --ignore-dir=build --ignore-dir=dist'
 
 bindkey -e
 bindkey '^[[1;9C' forward-word

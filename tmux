@@ -25,7 +25,7 @@ bind r source-file ~/.tmux.conf
 set-window-option -g automatic-rename on
 set-option -g set-titles on
 
-set -g mouse on
+#set -g mouse on
 
 # From https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
 ######################
