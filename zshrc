@@ -62,6 +62,8 @@ bindkey '^[[1;9D' backward-word
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
+export PATH=/usr/local/bin:$PATH
+
 # Other files to source
 typeset -ga sources
 sources+="$ZSHLOCAL"
@@ -73,5 +75,3 @@ foreach file (`echo $sources`)
         source $file
     fi
 end
-
-export PATH=/usr/local/bin:$PATH
