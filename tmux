@@ -125,3 +125,9 @@ set -g message-fg colour232
 set -g message-bg colour166
 
 # }
+
+set -g pane-border-status top
+
+# If the pane has a child process, show the command its running and the PID.
+# Otherwise just show the pane's current command.
+set -g pane-border-format "#([[ ! -z $(pgrep -P #{pane_pid}) ]] && ps -o command -p $(pgrep -P #{pane_pid}) | sed '2!d' || echo #{pane_current_command})#([[ ! -z $(pgrep -P #{pane_pid}) ]] && echo ' '[$(pgrep -P #{pane_pid})])"
