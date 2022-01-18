@@ -1,12 +1,23 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSHLOCAL=$HOME/.zshrc.local
 ZSH_THEME="custom"
-plugins=(git colored-man colorize github virtualenv pip python brew osx zsh-syntax-highlighting)
+plugins=(git colorize github virtualenv pip python brew osx)
 
 export DOTFILES=$HOME/dev/dotfiles
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export TEMP=/tmp
+export EDITOR=vim
+export IDE=~/Applications/Visual\ Studio\ Code.app
+
+# rust
+export PATH=$HOME/.cargo/bin:$PATH
+
+# haskell
+export PATH=$HOME/.ghcup/bin:$PATH
+
+# graphviz
+# export PATH=$HOME/dev/graphviz-2.40.1/cmd:$PATH
 
 # colors
 export NC='\033[0m'
@@ -44,6 +55,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+function newpwd() {
+    openssl rand -base64 ${1:-16}
+}
+
 # File-tree
 alias ll='ls -alF'
 alias la='ls -A'
@@ -59,6 +74,10 @@ alias gpoom='git push origin master'
 alias gpood='git push origin develop'
 alias gpoh='git push origin HEAD'
 alias gds='git diff --staged'
+alias gac='git add $(git diff --name-only)'
+function gcon () {
+    git checkout $1 2> /dev/null || git checkout -b $1
+}
 function gfoo () {
     git fetch origin $1:$1; git checkout $1; git branch --set-upstream-to=origin/$1 $1
 }
@@ -72,6 +91,14 @@ alias ag='ag --ignore-dir=build --ignore-dir=dist'
 bindkey -e
 bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
+
+# other
+function cf () {
+  echo $(git log --oneline --pretty="format:" --name-only master..) $(git status --porcelain | cut -c 4-) | awk "NF" | sort | uniq
+}
+function ocf () {
+  open -a $IDE $(cf "$1")
+}
 
 # real gcc
 # export HOMEBREW_CC=gcc-4.9
