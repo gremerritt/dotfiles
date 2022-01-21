@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSHLOCAL=$HOME/.zshrc.local
 ZSH_THEME="custom"
-plugins=(git colorize github virtualenv pip python brew osx)
+plugins=(git colorize github virtualenv pip python brew macos)
 
 export DOTFILES=$HOME/dev/dotfiles
 export LC_ALL=en_US.UTF-8
