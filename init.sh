@@ -42,7 +42,7 @@ if [ ! -f "~/.vim/autoload/pathogen.vim" ]; then
 fi
 
 if ! command -v brew &>/dev/null; then
-  echo "Install homebrew"
+  echo "Installing homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
