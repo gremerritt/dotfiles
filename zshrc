@@ -8,7 +8,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export TEMP=/tmp
 export EDITOR=vim
-export IDE=~/Applications/Visual\ Studio\ Code.app
+export IDE=/Applications/Visual\ Studio\ Code.app
 
 # rust
 export PATH=$HOME/.cargo/bin:$PATH
