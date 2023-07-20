@@ -85,6 +85,9 @@ function gfoo () {
 # Random stuff
 alias hist='tail -n 10000 $HISTFILE | grep '
 
+# Rails
+alias be='bundle exec'
+
 # ag
 alias ag='ag --ignore-dir=build --ignore-dir=dist'
 
@@ -121,3 +124,5 @@ foreach file (`echo $sources`)
         source $file
     fi
 end
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
