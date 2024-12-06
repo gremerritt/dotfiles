@@ -91,9 +91,9 @@ alias be='bundle exec'
 # ag
 alias ag='ag --ignore-dir=build --ignore-dir=dist'
 
-bindkey -e
-bindkey '^[[1;9C' forward-word
-bindkey '^[[1;9D' backward-word
+#bindkey -e
+#bindkey '^[[1;9C' forward-word
+#bindkey '^[[1;9D' backward-word
 
 # other
 function cf () {
